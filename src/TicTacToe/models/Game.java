@@ -4,12 +4,14 @@ import TicTacToe.Exceptions.DuplicateSymbolException;
 import TicTacToe.Exceptions.InvalidBotCountException;
 import TicTacToe.Exceptions.InvalidDimensionException;
 import TicTacToe.Exceptions.InvalidNoOfPlayersException;
+import TicTacToe.Strategies.WinningStrategy.WinningStrategy;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class Game {
-    private List<Player> player;
+    private List<Player> players;
     private Board board;
     private List<Move> moves;
     private Player winner;
@@ -19,8 +21,8 @@ public class Game {
     //winningStrategy is basically players deciding on the winning criteria at the start of the game
     //WinningStrategies could include some or all of the following - win by rows, win by columns, win by diagonal, win by corners
 
-    private Game(List<Player> player, Board board, List<WinningStrategy> winningStrategies) {
-        this.player = player;
+    private Game(List<Player> players, Board board, List<WinningStrategy> winningStrategies) {
+        this.players = players;
         this.board = board;
         this.moves = new ArrayList<Move>();//at the start of any game, there will be no moves, it will just be an empty arraylist to which we would be adding all the moves
         this.gameState = GameState.IN_PROGRESS; //whenever a new game starts, gameState would be IN_PROGRESS
@@ -28,23 +30,57 @@ public class Game {
         this.winningStrategies = winningStrategies;
     }
 
+    public void setGameState(GameState gameState) {
+        this.gameState = gameState;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public List<Move> getMoves() {
+        return moves;
+    }
+
+    public Player getWinner() {
+        return winner;
+    }
+
+    public GameState getGameState() {
+        return gameState;
+    }
+
+    public int getNextPlayerIndex() {
+        return nextPlayerIndex;
+    }
+
+    public List<WinningStrategy> getWinningStrategies() {
+        return winningStrategies;
+    }
+
+    //TODO check why need inner and outer Builder classes while using the Builder design pattern
+    //for the Builder class, we need an outer Builder class as well
+    //first get the Builder object, then set all the values and then build the Builder object
+    public static Builder builder(){
+        return new Builder();
+        //this will call the builder method to set values for the builder object
+        //then the build() method will validate all the values before creating a new Builder object
+    }
+
     //we need to build a Builder class, so that before we create an object, we validate that it meets all the criteria
     //This is because object creation is an expensive operation, and we need to ensure that object is created only if all the validations are met
     //all user input should go via the Builder class, nothing should go to the Game class directly
-    public static class Builder(){
+    public static class Builder{
         private List<Player> players;
         private List<WinningStrategy> winningStrategies;
         private int dimension;
 
 
-        //TODO check why need inner and outer Builder classes while using the Builder design pattern
-        //for the Builder class, we need an outer Builder class as well
-        //first get the Builder object, then set all the values and then build the Builder object
-        public static Builder builder(){
-            return new Builder();
-            //this will call the builder method to set values for the builder object
-            //then the build() method will validate all the values before creating a new Builder object
-        }
+
 
         //constructor is kept private so that no one can access it
         //we will also be initiating the following in the constructor with empty new ArrayLists
@@ -56,17 +92,19 @@ public class Game {
         }
 
         //create the setter methods for the above
-
-        public void setPlayers(List<Player> players) {
+        public Builder setPlayers(List<Player> players) {
             this.players = players;
+            return this;
         }
 
-        public void setWinningStrategies(List<WinningStrategy> winningStrategies) {
+        public Builder setWinningStrategies(List<WinningStrategy> winningStrategies) {
             this.winningStrategies = winningStrategies;
+            return this;
         }
 
-        public void setDimension(int dimension) {
+        public Builder setDimension(int dimension) {
             this.dimension = dimension;
+            return this;
         }
 
         //allowing a single player and winning strategy to be added
@@ -81,7 +119,7 @@ public class Game {
 
         private void validateBotCounts(){
             int botCount=0;
-            for(Players player: players){
+            for(Player player: players){
                 if (player.getPlayerType().equals(PlayerType.BOT)){
                     botCount++;
                 }
@@ -123,7 +161,7 @@ public class Game {
 
         //we create a build method which would first validate everything and then build the game
 
-        private Game build(){
+        public Game build(){
             validate();
             return new Game(players, new Board(dimension), winningStrategies);
         }

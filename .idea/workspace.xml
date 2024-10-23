@@ -1,26 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="712c2ead-3bf9-4bb2-a264-cba01eff1d5b" name="Changes" comment="" />
+    <list default="true" id="712c2ead-3bf9-4bb2-a264-cba01eff1d5b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/Controller/GameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/Exceptions/CellNotOnBoardException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/Exceptions/GameDrawnException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/Exceptions/InvalidCellChosenException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/Strategies/BotPlayingStrategy/BotPlayingStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/Strategies/BotPlayingStrategy/BotPlayingStrategyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/Strategies/BotPlayingStrategy/RandomBotPlayingStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/Strategies/WinningStrategy/OrderOneWinningStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/Strategies/WinningStrategy/WinningStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/Strategies/WinningStrategy/WinningStrategyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/TicTacToeGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/models/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/models/Bot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/models/BotDifficultyLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/models/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/models/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/models/Player.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Exception" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 7
 }]]></component>
   <component name="ProjectId" id="2nccQPzPllY0mma05e0B5VlUskM" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.TicTacToeGame.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true"
@@ -36,5 +73,31 @@
       <updated>1729275787981</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/TicTacToe/models/Player.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/TicTacToe/TicTacToeGame.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/TicTacToe/TicTacToeGame.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/TicTacToe/TicTacToeGame.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
